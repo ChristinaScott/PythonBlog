@@ -6,12 +6,12 @@ import sqlite3
 
 def connect_db():
     """Connect to the SQLite database."""
-    conn = sqlite3.connect('blog.db')
-    return conn
+    conn1 = sqlite3.connect('blog.db')
+    return conn1
 
-def create_tables(conn):
+def create_tables(conn1):
     """Create the posts table if it doesn't exist."""
-    cursor = conn.cursor()
+    cursor = conn1.cursor()
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS posts (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -20,4 +20,4 @@ def create_tables(conn):
         created_at TEXT NOT NULL
     )
     ''')
-    conn.commit()
+    conn1.commit()
